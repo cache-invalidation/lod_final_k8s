@@ -17,6 +17,11 @@ s:create_index('primary', {
   type = 'hash',
   parts = {'id'}
 })
+s:create_index('secondary', {
+  type = 'hash',
+  parts = {'name', 'surname', 'patronymic'}
+})
+
 
 s = box.schema.space.create('publication')
 s:format({
@@ -32,6 +37,10 @@ s:format({
 s:create_index('primary', {
   type = 'hash',
   parts = {'id'}
+})
+s:create_index('secondary', {
+  type = 'hash',
+  parts = {'user_id'}
 })
 
 s = box.schema.space.create('mention')
