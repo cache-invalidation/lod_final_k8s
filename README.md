@@ -15,3 +15,5 @@ kubectl exec --stdin --tty ubuntu --kubeconfig=kubeconfig -- /bin/bash
 kubectl apply -f tarantool.yaml --kubeconfig=kubeconfig
 kubectl expose pod tarantool --target-port=3301 --type=NodePort --kubeconfig=kubeconfig
 ```
+
+To initialize database with schemas run the `init.lua` script on the Tarantool pod.
